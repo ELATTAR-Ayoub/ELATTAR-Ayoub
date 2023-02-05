@@ -46,4 +46,5 @@
 
 ![Visitors](https://visitor-badge.glitch.me/badge?page_id=ELATTAR-Ayoub) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/ELATTAR-Ayoub) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ELATTAR-Ayoub)
 
-<p><img src="https://i.gifer.com/3z0b.gif" alt="blender" width="400" height="400"/><p/>
+![Alt Text](https://i.gifer.com/3z0b.gif)
+
