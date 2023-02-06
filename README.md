@@ -4,7 +4,7 @@
 
 
 
-| Github Stats | Top Languages |
+| Top Languages | Github Stats |
 | --- | --- |
 | <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=elattar-ayoub&show_icons=true&locale=en&layout=compact&theme=nightowl" alt="elattar-ayoub" /> | ![ELATTAR's top languages](https://github-readme-streak-stats.herokuapp.com/?user=elattar-ayoub&theme=nightowl) |
 
