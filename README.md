@@ -13,7 +13,7 @@
   constructor() {
     this.name = 'ELATTAR Ayoub';
     this.age = 22;
-    this.work = ['Typescript', 'Nextjs13', 'Reactjs', 'Vuejs', 'Sass', 'TailwindCSS' ];
+    this.work = ['Front-end Developer', 'UI/UX Designer', 'Back-end Developer' ];
     this.favoriteLanguagues = ['Typescript', 'Javascript', 'Css', 'Python'];
     this.hobbies = ['Programming', 'Video games', 'Japanese novels'];
   }
