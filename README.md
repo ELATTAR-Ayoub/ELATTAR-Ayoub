@@ -13,7 +13,7 @@
   constructor() {
     this.name = 'ELATTAR Ayoub';
     this.age = 22;
-    this.work = ['Front-end Developer', 'UI/UX Designer', 'Back-end Developer' ];
+    this.work = ['Front-end Developer', 'UI/UX Designer' ];
     this.favoriteLanguagues = ['Typescript', 'Javascript', 'Css', 'Python'];
     this.hobbies = ['Programming', 'Video games', 'Japanese novels'];
   }
