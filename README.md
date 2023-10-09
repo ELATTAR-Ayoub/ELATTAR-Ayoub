@@ -12,7 +12,7 @@
  class ELATTAR {
   constructor() {
     this.name = 'ELATTAR Ayoub';
-    this.age = 21;
+    this.age = 22;
     this.work = ['Typescript', 'Nextjs13', 'Reactjs', 'Vuejs', 'Sass', 'TailwindCSS' ];
     this.favoriteLanguagues = ['Typescript', 'Javascript', 'Css', 'Python'];
     this.hobbies = ['Programming', 'Video games', 'Japanese novels'];
