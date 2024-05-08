@@ -1,6 +1,6 @@
 
 <h1 align="">Hi 👋, I'm ELATTAR Ayoub <img src="https://camo.githubusercontent.com/fb070d9f71a64edbafed08519130d75e7e0a0a69665d50d94ad095157f702e59/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6d47634e6a736657416a593541455a4e77362f67697068792e676966" alt="blender" width="40" height="40"/></h1>
-<h3 align="">Frontend developer by day 🌞, UI/UX designer by night 🌙. Combining technical skills with a creative eye to bring digital experiences to life.</h3>
+<h3 align="">Frontend developer by day 🌞, UI/UX designer by night 🌙.</h3>
 
 
 
@@ -41,7 +41,7 @@
 
 <h3 align="left">Connect with me:</h3>
 
-<p align="left"> <a href="https://elattar.dev" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=A&style=for-the-badge" alt="ELATTAR Ayoub" /></a> <a href="https://twitter.com/ea_krowl" target="_blank"><img src="https://img.shields.io/twitter/follow/ea_krowl?logo=twitter&style=for-the-badge" alt="ea_krowl" /></a>  <a href="https://linkedin.com/in/https://www.linkedin.com/in/ayoub-elattar-22469320b/" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=linkedin&style=for-the-badge" alt="ELATTAR Ayoub" /></a>   <a href="https://codepen.io/@elattar-ayoub" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=codepen&style=for-the-badge" alt="ELATTAR Ayoub" /></a> </p>
+/*<p align="left"> <a href="https://elattar.dev" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=A&style=for-the-badge" alt="ELATTAR Ayoub" /></a> <a href="https://twitter.com/ea_krowl" target="_blank"><img src="https://img.shields.io/twitter/follow/ea_krowl?logo=twitter&style=for-the-badge" alt="ea_krowl" /></a>  <a href="https://linkedin.com/in/https://www.linkedin.com/in/ayoub-elattar-22469320b/" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=linkedin&style=for-the-badge" alt="ELATTAR Ayoub" /></a>   <a href="https://codepen.io/@elattar-ayoub" target="_blank"><img src="https://img.shields.io/twitter/follow/ELATTAR Ayoub?logo=codepen&style=for-the-badge" alt="ELATTAR Ayoub" /></a> </p>*/
 
 
 ![Visitors](https://visitor-badge.glitch.me/badge?page_id=ELATTAR-Ayoub) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/ELATTAR-Ayoub) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ELATTAR-Ayoub)
