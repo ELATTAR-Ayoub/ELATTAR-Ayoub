@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ayoub Elattar</h1>
-<h3 align="center">Forward-Deployed Engineer · Full-Stack + AI 🤖</h3>
+<h3 align="center">Forward-Deployed Engineer · Full-Stack + UI/UX Design </h3>
 
 <p align="center">
 I embed with a team, learn their domain fast, and build the product end to end, from agentic AI backends to the UX people open every day. Design and frontend are my strongest skills, so teams trust me with the whole product, not just the model behind it.
