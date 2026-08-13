@@ -1,5 +1,7 @@
 <div align="center">
-  <img src="assets/img/girl.png" width="230" alt="">
+  <a href="https://elattar-ayoub.github.io/ELATTAR-Ayoub/">
+    <img src="assets/img/banner.gif" width="880" alt="Ayoub Elattar — click through to the full site">
+  </a>
 </div>
 
 <h1 align="center">Hi 👋, I'm Ayoub Elattar</h1>
@@ -60,33 +62,11 @@ class Ayoub {
 ## <img src="assets/img/newy.gif" width="28" alt="new"> Stats
 
 <!-- STATS:START -->
-| Language | Share |
-| --- | --- |
-| TypeScript | 67.5% |
-| Python | 12.0% |
-| CSS | 7.3% |
-| JavaScript | 6.8% |
-| Jupyter Notebook | 1.8% |
-| HTML | 1.7% |
-| Other | 2.8% |
-
-**35** repos &nbsp;·&nbsp; **65** stars &nbsp;·&nbsp; **13** followers &nbsp;·&nbsp; on GitHub since **2021**
-
-<sub>refreshed automatically · 2026-08-13</sub>
 <!-- STATS:END -->
 
 <img src="https://streak-stats.demolab.com/?user=elattar-ayoub&theme=nightowl" alt="streak stats" />
 
-<details>
-<summary><b>☆ before you proceed ☆</b></summary>
-
-<br>
-
-This page was built out of nostalgia for the simpler, more personal era of the internet — the "old web" — rather than the corporate hellscape of the modern profile page.
-
-Coded by hand, best viewed at 1920×1080. Made with caffeine and stubbornness in Taipei. ♡
-
-</details>
+<p align="center">Made with ❤️ by ELATTAR</p>
 
 ---
 

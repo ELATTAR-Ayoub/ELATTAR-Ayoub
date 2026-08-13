@@ -20,6 +20,17 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* MS Sans Serif is a bitmap face — subpixel antialiasing turns it to mush.
+   Render it unsmoothed so the pixel grid stays intact. */
+.shortcut span, .tile span, .win .bar, .win .menu, .win .bar i, .figures span {
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  text-rendering: geometricPrecision;
+}
+
 body {
   min-height: 100vh;
   font-family: dep, ui-monospace, monospace;
@@ -230,3 +241,14 @@ h3.hd img { width: 20px; vertical-align: -3px; image-rendering: pixelated; }
 footer { text-align: center; padding: .8rem 0 0; font-size: .64rem; line-height: 1.9; color: rgba(253, 252, 237, .9); }
 footer a { color: #ffff99; }
 footer img { width: 12px; vertical-align: -2px; }
+
+/* footer sign-off */
+.madeby {
+  text-align: center;
+  font-family: lady, serif;
+  font-size: 1.5rem;
+  color: var(--cream);
+  padding: .4rem 0;
+  text-shadow: -1px -1px 0 #3c3a2e, 1px -1px 0 #3c3a2e, -1px 1px 0 #3c3a2e, 1px 1px 0 #3c3a2e;
+}
+.madeby .heart { font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif; font-size: .85em; }
