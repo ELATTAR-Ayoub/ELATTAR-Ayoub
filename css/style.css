@@ -46,8 +46,31 @@ body {
 /* ---------- the painted figures, each its own element ---------- */
 
 .scenery { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.scenery img, .foreground img { position: absolute; }
 
-.scenery img { position: absolute; }
+/* one parallax rail per layer; JS only ever writes translate3d here, so the
+   figures keep their own transforms (swing, zoom) on the <img> inside */
+.par { position: absolute; inset: 0; will-change: transform; }
+
+/* the canopy floats ABOVE the content, the way their .foreground does */
+.foreground {
+  position: fixed; inset: 0; z-index: 40;
+  overflow: hidden; pointer-events: none;
+}
+.canopy {
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  opacity: .5;
+  filter: drop-shadow(0 0 30px rgba(13, 13, 11, .42));
+  animation: zoomInOut 14s ease-in-out infinite;
+}
+@keyframes zoomInOut {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.02); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .canopy { animation: none; }
+}
 
 .trees {
   left: -4vw; bottom: -6vh; width: min(46vw, 620px);

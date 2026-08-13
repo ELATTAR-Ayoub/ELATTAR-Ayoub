@@ -12,9 +12,14 @@
 
 <!-- scenery: every figure is its own asset, layered by CSS -->
 <div class="scenery" aria-hidden="true">
-  <img class="trees"  src="assets/img/trees.png"  alt="">
-  <img class="girl"   src="assets/img/girl.png"   alt="">
-  <img class="statue" src="assets/img/statue.png" alt="">
+  <div class="par" data-speed="0.05"><img class="trees"  src="assets/img/trees.png"  alt=""></div>
+  <div class="par" data-speed="0.09"><img class="statue" src="assets/img/statue.png" alt=""></div>
+  <div class="par" data-speed="0.15"><img class="girl"   src="assets/img/girl.png"   alt=""></div>
+</div>
+
+<!-- the canopy the original site floats over everything -->
+<div class="foreground" aria-hidden="true">
+  <div class="par" data-speed="0.24"><img class="canopy" src="assets/img/canopy.png" alt=""></div>
 </div>
 
 <div class="page">
@@ -127,6 +132,21 @@
       </div>
       <div class="body">
 <!-- STATS:START -->
+        <div class="bars">
+          <div class="row"><span class="nm">TypeScript</span><span class="track"><span class="fill" style="width:67.5%;background:#3178c6"></span></span><span class="pc">67.5%</span></div>
+          <div class="row"><span class="nm">Python</span><span class="track"><span class="fill" style="width:12.1%;background:#3572a5"></span></span><span class="pc">12.1%</span></div>
+          <div class="row"><span class="nm">CSS</span><span class="track"><span class="fill" style="width:7.3%;background:#663399"></span></span><span class="pc">7.3%</span></div>
+          <div class="row"><span class="nm">JavaScript</span><span class="track"><span class="fill" style="width:6.8%;background:#f1e05a"></span></span><span class="pc">6.8%</span></div>
+          <div class="row"><span class="nm">Jupyter Notebook</span><span class="track"><span class="fill" style="width:1.8%;background:#da5b0b"></span></span><span class="pc">1.8%</span></div>
+          <div class="row"><span class="nm">HTML</span><span class="track"><span class="fill" style="width:1.6%;background:#e34c26"></span></span><span class="pc">1.6%</span></div>
+          <div class="row"><span class="nm">Other</span><span class="track"><span class="fill" style="width:2.8%;background:#8b949e"></span></span><span class="pc">2.8%</span></div>
+        </div>
+        <div class="figures">
+          <div><b data-stat="repos">35</b><span>repos</span></div>
+          <div><b data-stat="stars">65</b><span>stars</span></div>
+          <div><b data-stat="followers">13</b><span>followers</span></div>
+          <div><b>2021</b><span>since</span></div>
+        </div>
 <!-- STATS:END -->
       </div>
     </div>
@@ -178,6 +198,26 @@
       set('stars', owned.reduce((n, r) => n + r.stargazers_count, 0));
     }
   } catch (e) { /* keep the baked-in numbers */ }
+})();
+</script>
+
+<script>
+// Parallax: nearer layers travel faster. Only translate3d is written here so the
+// swing and zoom transforms on the <img> children stay untouched.
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const rails = [...document.querySelectorAll('.par')];
+  if (!rails.length) return;
+  let queued = false;
+  const paint = () => {
+    const y = window.scrollY || window.pageYOffset;
+    for (const r of rails) r.style.transform = 'translate3d(0,' + (-y * r.dataset.speed).toFixed(2) + 'px,0)';
+    queued = false;
+  };
+  addEventListener('scroll', () => {
+    if (!queued) { queued = true; requestAnimationFrame(paint); }
+  }, { passive: true });
+  paint();
 })();
 </script>
 </body>
