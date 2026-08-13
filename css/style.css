@@ -292,3 +292,41 @@ footer img { width: 12px; vertical-align: -2px; }
   text-shadow: -1px -1px 0 #3c3a2e, 1px -1px 0 #3c3a2e, -1px 1px 0 #3c3a2e, 1px 1px 0 #3c3a2e;
 }
 .madeby .heart { font-family: "Segoe UI Emoji", "Apple Color Emoji", sans-serif; font-size: .85em; }
+
+/* ---------- scrollbar, dressed to match the Win98 chrome ---------- */
+
+/* Firefox only. Chrome disables the ::-webkit-scrollbar pseudo-elements the
+   moment the standard properties are set, so these must be scoped away from it. */
+@supports not selector(::-webkit-scrollbar) {
+  html { scrollbar-width: auto; scrollbar-color: #c0c0c0 #17383c; }
+}
+
+/* WebKit / Blink */
+::-webkit-scrollbar { width: 16px; height: 16px; }
+
+/* the classic 50% dither of white on silver */
+::-webkit-scrollbar-track {
+  background-color: #c0c0c0;
+  background-image:
+    linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%),
+    linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%);
+  background-size: 2px 2px;
+  background-position: 0 0, 1px 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 2px outset #dfdfdf;
+}
+::-webkit-scrollbar-thumb:active { border-style: inset; }
+
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment,
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+  display: block;
+  width: 16px; height: 16px;
+  background: #c0c0c0;
+  border: 2px outset #dfdfdf;
+}
+::-webkit-scrollbar-corner { background: #c0c0c0; }
