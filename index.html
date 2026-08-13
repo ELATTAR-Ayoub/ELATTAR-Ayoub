@@ -126,20 +126,23 @@
         <i>_</i><i>□</i><i>✕</i>
       </div>
       <div class="body">
+<!-- STATS:START -->
         <div class="bars">
-          <div class="row"><span class="nm">TypeScript</span><span class="track"><span class="fill" style="width:67.8%;background:#3178c6"></span></span><span class="pc">67.8%</span></div>
+          <div class="row"><span class="nm">TypeScript</span><span class="track"><span class="fill" style="width:67.5%;background:#3178c6"></span></span><span class="pc">67.5%</span></div>
           <div class="row"><span class="nm">Python</span><span class="track"><span class="fill" style="width:12.0%;background:#3572a5"></span></span><span class="pc">12.0%</span></div>
-          <div class="row"><span class="nm">CSS</span><span class="track"><span class="fill" style="width:7.2%;background:#663399"></span></span><span class="pc">7.2%</span></div>
-          <div class="row"><span class="nm">JavaScript</span><span class="track"><span class="fill" style="width:6.9%;background:#f1e05a"></span></span><span class="pc">6.9%</span></div>
-          <div class="row"><span class="nm">Notebook / HTML</span><span class="track"><span class="fill" style="width:3.3%;background:#da5b0b"></span></span><span class="pc">3.3%</span></div>
-          <div class="row"><span class="nm">Vue / C#</span><span class="track"><span class="fill" style="width:1.8%;background:#41b883"></span></span><span class="pc">1.8%</span></div>
+          <div class="row"><span class="nm">CSS</span><span class="track"><span class="fill" style="width:7.3%;background:#663399"></span></span><span class="pc">7.3%</span></div>
+          <div class="row"><span class="nm">JavaScript</span><span class="track"><span class="fill" style="width:6.8%;background:#f1e05a"></span></span><span class="pc">6.8%</span></div>
+          <div class="row"><span class="nm">Jupyter Notebook</span><span class="track"><span class="fill" style="width:1.8%;background:#da5b0b"></span></span><span class="pc">1.8%</span></div>
+          <div class="row"><span class="nm">HTML</span><span class="track"><span class="fill" style="width:1.7%;background:#e34c26"></span></span><span class="pc">1.7%</span></div>
+          <div class="row"><span class="nm">Other</span><span class="track"><span class="fill" style="width:2.8%;background:#8b949e"></span></span><span class="pc">2.8%</span></div>
         </div>
         <div class="figures">
-          <div><b>37</b><span>repos</span></div>
-          <div><b>65</b><span>stars</span></div>
-          <div><b>13</b><span>followers</span></div>
+          <div><b data-stat="repos">35</b><span>repos</span></div>
+          <div><b data-stat="stars">65</b><span>stars</span></div>
+          <div><b data-stat="followers">13</b><span>followers</span></div>
           <div><b>2021</b><span>since</span></div>
         </div>
+<!-- STATS:END -->
       </div>
     </div>
   </section>
@@ -167,5 +170,37 @@
   </footer>
 
 </div>
+
+<script>
+// Live-refresh the counters straight from the public API on page load.
+// The values baked in by .github/workflows/stats.yml stay as the fallback,
+// so an offline visitor or a rate-limited IP still sees real numbers.
+(async () => {
+  const set = (k, v) => {
+    const el = document.querySelector('[data-stat="' + k + '"]');
+    if (el) el.textContent = v;
+  };
+  try {
+    const user = 'ELATTAR-Ayoub';
+    const u = await fetch('https://api.github.com/users/' + user).then(r => r.ok ? r.json() : Promise.reject());
+    set('followers', u.followers);
+
+    let owned = [], page = 1;
+    while (page <= 3) {
+      const batch = await fetch(
+        'https://api.github.com/users/' + user + '/repos?per_page=100&type=owner&page=' + page
+      ).then(r => r.ok ? r.json() : []);
+      if (!batch.length) break;
+      owned = owned.concat(batch.filter(r => !r.fork));
+      if (batch.length < 100) break;
+      page++;
+    }
+    if (owned.length) {
+      set('repos', owned.length);
+      set('stars', owned.reduce((n, r) => n + r.stargazers_count, 0));
+    }
+  } catch (e) { /* keep the baked-in numbers */ }
+})();
+</script>
 </body>
 </html>

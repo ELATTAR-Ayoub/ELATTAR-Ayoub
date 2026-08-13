@@ -59,16 +59,21 @@ class Ayoub {
 
 ## <img src="assets/img/newy.gif" width="28" alt="new"> Stats
 
+<!-- STATS:START -->
 | Language | Share |
 | --- | --- |
-| TypeScript | 67.8% |
+| TypeScript | 67.5% |
 | Python | 12.0% |
-| CSS | 7.2% |
-| JavaScript | 6.9% |
-| Notebook / HTML | 3.3% |
-| Vue / C# | 1.8% |
+| CSS | 7.3% |
+| JavaScript | 6.8% |
+| Jupyter Notebook | 1.8% |
+| HTML | 1.7% |
+| Other | 2.8% |
 
-**37** repos &nbsp;·&nbsp; **65** stars &nbsp;·&nbsp; **13** followers &nbsp;·&nbsp; on GitHub since **2021**
+**35** repos &nbsp;·&nbsp; **65** stars &nbsp;·&nbsp; **13** followers &nbsp;·&nbsp; on GitHub since **2021**
+
+<sub>refreshed automatically · 2026-08-13</sub>
+<!-- STATS:END -->
 
 <img src="https://streak-stats.demolab.com/?user=elattar-ayoub&theme=nightowl" alt="streak stats" />
 
