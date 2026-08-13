@@ -1,56 +1,16 @@
-<h1 align="center">Hi 👋, I'm Ayoub Elattar</h1>
-<h3 align="center">Forward-Deployed Engineer · Full-Stack + UI/UX Design </h3>
+<div align="center">
+<img src="assets/readme/p1-title.jpg" width="720" alt="Hi, I'm Ayoub Elattar"><br>
+<a href="https://elattar.dev" title="about"><img src="assets/readme/nav-about.jpg" width="144" alt="about"></a><a href="#stack" title="stack"><img src="assets/readme/nav-stack.jpg" width="144" alt="stack"></a><a href="https://github.com/ELATTAR-Ayoub?tab=repositories" title="projects"><img src="assets/readme/nav-projects.jpg" width="144" alt="projects"></a><a href="https://elattar.dev" title="elattar.dev"><img src="assets/readme/nav-elattar.jpg" width="144" alt="elattar.dev"></a><a href="https://elattar.dev/#contact" title="contact"><img src="assets/readme/nav-contact.jpg" width="144" alt="contact"></a><br>
+<img src="assets/readme/hero-a.jpg" width="720" alt=""><br>
+<img src="assets/readme/hero-bL.jpg" width="320" alt="Forward-Deployed Engineer, Full-Stack plus UI/UX Design. I embed with a team, learn their domain fast, and build the product end to end, from agentic AI backends to the UX people open every day. Design and frontend are my strongest skills, so teams trust me with the whole product, not just the model behind it."><img src="assets/readme/hero-swing.gif" width="400" alt="A woman on a garden swing, after Fragonard, swinging gently"><br>
+<img src="assets/readme/hero-c.jpg" width="720" alt="Taipei, Taiwan. elattar.dev. Frontend and Design:"><br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" title="JavaScript"><img src="assets/readme/ico-javascript.jpg" width="72" alt="JavaScript"></a><a href="https://www.typescriptlang.org/" title="TypeScript"><img src="assets/readme/ico-typescript.jpg" width="72" alt="TypeScript"></a><a href="https://react.dev/" title="React"><img src="assets/readme/ico-react.jpg" width="72" alt="React"></a><a href="https://nextjs.org/" title="Next.js"><img src="assets/readme/ico-nextjs.jpg" width="72" alt="Next.js"></a><a href="https://vuejs.org/" title="Vue"><img src="assets/readme/ico-vuejs.jpg" width="72" alt="Vue"></a><a href="https://nuxt.com/" title="Nuxt"><img src="assets/readme/ico-nuxtjs.jpg" width="72" alt="Nuxt"></a><a href="https://flutter.dev/" title="Flutter"><img src="assets/readme/ico-flutter.jpg" width="72" alt="Flutter"></a><a href="https://sass-lang.com/" title="Sass"><img src="assets/readme/ico-sass.jpg" width="72" alt="Sass"></a><a href="https://tailwindcss.com/" title="Tailwind"><img src="assets/readme/ico-tailwind.jpg" width="72" alt="Tailwind"></a><a href="https://www.figma.com/" title="Figma"><img src="assets/readme/ico-figma.jpg" width="72" alt="Figma"></a><br>
+<img src="assets/readme/p3-backhead.jpg" width="720" alt="Backend, AI and Tools:"><br>
+<img src="assets/readme/bk-edgeL.jpg" width="36" alt=""><a href="https://www.python.org/" title="Python"><img src="assets/readme/ico-python.jpg" width="72" alt="Python"></a><a href="https://nodejs.org/" title="Node.js"><img src="assets/readme/ico-nodejs.jpg" width="72" alt="Node.js"></a><a href="https://www.postgresql.org/" title="PostgreSQL"><img src="assets/readme/ico-postgresql.jpg" width="72" alt="PostgreSQL"></a><a href="https://graphql.org/" title="GraphQL"><img src="assets/readme/ico-graphql.jpg" width="72" alt="GraphQL"></a><a href="https://www.docker.com/" title="Docker"><img src="assets/readme/ico-docker.jpg" width="72" alt="Docker"></a><a href="https://firebase.google.com/" title="Firebase"><img src="assets/readme/ico-firebase.jpg" width="72" alt="Firebase"></a><a href="https://www.cypress.io/" title="Cypress"><img src="assets/readme/ico-cypress.jpg" width="72" alt="Cypress"></a><a href="https://git-scm.com/" title="Git"><img src="assets/readme/ico-git.jpg" width="72" alt="Git"></a><a href="https://www.linux.org/" title="Linux"><img src="assets/readme/ico-linux.jpg" width="72" alt="Linux"></a><img src="assets/readme/bk-edgeR.jpg" width="36" alt=""><br>
+<img src="assets/readme/p4-body.jpg" width="720" alt="Stats. Languages: TypeScript 67.8 percent, Python 12.0, CSS 7.2, JavaScript 6.9, Notebook and HTML 3.3, Vue and C sharp 1.8. 37 repos, 65 stars, 13 followers, on GitHub since 2021. Before you proceed: this page was built out of nostalgia for the simpler, more personal era of the internet, the old web, rather than the corporate hellscape of the modern profile page. Coded by hand, best viewed at 1920x1080. Made with caffeine and stubbornness in Taipei."><br>
+<a href="https://howsoonisnow.org/" title="howsoonisnow.org"><img src="assets/readme/p5-credit.jpg" width="720" alt="Layout, fonts and trimmings lovingly borrowed from howsoonisnow.org. Backdrop: The Swing, Jean-Honore Fragonard, 1767, public domain."></a>
+<br><br>
+<img src="https://reigen.moe/image/bg/sitebanner.gif" width="720" alt="">
+</div>
 
-<p align="center">
-I embed with a team, learn their domain fast, and build the product end to end, from agentic AI backends to the UX people open every day. Design and frontend are my strongest skills, so teams trust me with the whole product, not just the model behind it.
-</p>
-
-<p align="center">📍 Taipei, Taiwan &nbsp;·&nbsp; 🌐 <a href="https://elattar.dev">elattar.dev</a></p>
-
-| Top Languages | GitHub Stats |
-| --- | --- |
-| <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=elattar-ayoub&show_icons=true&locale=en&layout=compact&theme=nightowl" alt="elattar-ayoub" /> | <img src="https://streak-stats.demolab.com/?user=elattar-ayoub&theme=nightowl" alt="ELATTAR's streak stats" /> |
-
-```javascript
-class Ayoub {
-  constructor() {
-    this.name = 'Ayoub Elattar';
-    this.role = 'Forward-Deployed Engineer';
-    this.work = ['Full-Stack Engineering', 'AI / LLM Agents', 'UI/UX Design'];
-    this.stack = ['TypeScript', 'Python', 'React', 'Next.js', 'LangGraph'];
-    this.ships = 'the whole product, end to end';
-    this.languages = ['English', 'Arabic', '中文', '日本語'];
-  }
-}
-```
-
-<h3 align="left">Frontend & Design:</h3>
-<p align="left">
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a>
-<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
-<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
-<a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a>
-<a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a>
-<a href="https://nuxtjs.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg" alt="nuxtjs" width="40" height="40"/> </a>
-<a href="https://flutter.dev/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg" alt="flutter" width="40" height="40"/> </a>
-<a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a>
-<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a>
-<a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a>
-</p>
-
-<h3 align="left">Backend, AI & Tools:</h3>
-<p align="left">
-<a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a>
-<a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>
-<a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>
-<a href="https://graphql.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="40" height="40"/> </a>
-<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a>
-<a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a>
-<a href="https://www.cypress.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="40" height="40"/> </a>
-<a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a>
-<a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a>
-</p>
-
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/ELATTAR-Ayoub) [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ELATTAR-Ayoub)
-
-![Alt Text](https://reigen.moe/image/bg/sitebanner.gif)
+<a id="stack"></a>

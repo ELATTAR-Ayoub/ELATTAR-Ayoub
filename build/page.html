@@ -1,0 +1,332 @@
+<meta charset="utf-8">
+<title>render</title>
+<style>
+@font-face { font-family: blue;      src: url("../assets/site/fonts/blue.ttf"); }
+@font-face { font-family: wobble;    src: url("../assets/site/fonts/wobble.otf"); }
+@font-face { font-family: lady;      src: url("../assets/site/fonts/AdorableLady.ttf"); }
+@font-face { font-family: Pixelplay; src: url("../assets/site/fonts/pixelplay.otf"); }
+@font-face { font-family: dep;       src: url("../assets/site/fonts/DepartureMono-Regular.woff"); }
+@font-face { font-family: ms;        src: url("../assets/site/fonts/ms_sans_serif.woff2") format("woff2"); }
+@font-face { font-family: ms2;       src: url("../assets/site/fonts/ms_sans_serif_bold.woff2") format("woff2"); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { zoom: 0.8181818; }
+html, body { width: 880px; }
+body {
+  width: 880px; position: relative; overflow: hidden;
+  font-family: "Times New Roman", serif;
+  /* painting across the hero, then fading into their tiled texture for the rest */
+  background:
+    linear-gradient(180deg,
+      rgba(9,26,28,0) 0px, rgba(9,26,28,0) 470px, rgba(9,26,28,.55) 660px,
+      rgba(8,23,25,.86) 900px, rgba(7,20,22,.93) 1250px, rgba(6,18,20,.95) 100%),
+    url("../assets/site/img/swing2.gif") no-repeat left top / 1230px auto,
+    url("../assets/site/img/germ.bmp") repeat left top,
+    #0a1c1e;
+}
+
+/* painted figures from their site, sitting in the background */
+.fig { position: absolute; pointer-events: none; }
+.girl   { right: -26px; top: 176px; width: 500px; z-index: 5;
+          filter: drop-shadow(-8px 6px 18px rgba(6,18,22,.6)) contrast(1.05);
+          transform-origin: 68% -55%;
+          animation: swing 4.8s ease-in-out infinite alternate; }
+@keyframes swing {
+  from { transform: rotate(-2.4deg); }
+  to   { transform: rotate( 2.4deg); }
+}
+.statue { left: -12px; top: 200px; width: 212px; z-index: 6;
+          filter: drop-shadow(0 0 20px rgba(6,18,22,.9)) drop-shadow(4px 3px 8px rgba(6,18,22,.75)) contrast(1.14) saturate(1.06); }
+.trees  { left: -60px; bottom: -30px; width: 560px; z-index: 4; opacity: .96; }
+
+/* all content rides above the scenery */
+.up, section { position: relative; z-index: 30; }
+
+header { text-align: center; padding: 20px 0 0; }
+.crazy {
+  font-family: blue; font-size: 60px; line-height: 1;
+  color: rgba(255,249,251,.85); letter-spacing: 1px;
+  text-shadow: 0 2px 14px rgba(15,35,40,.6);
+}
+.crazy .emo { font-family: "Segoe UI Emoji"; font-size: 38px; vertical-align: 7px; }
+
+nav { display: flex; justify-content: center; gap: 0; margin-top: -2px; }
+.anchor { display: block; width: 176px; height: 86px; }
+.path-text { font-family: wobble; font-size: 27px; fill: #FFFDED; }
+path.top { stroke: #FFFF00; stroke-width: 4px; fill: none; }
+
+.knight { display: flex; gap: 12px; padding: 2px 14px 0; align-items: flex-start; }
+.col-left { width: 92px; flex: none; }
+.col-mid  { width: 470px; flex: none; }
+.col-right{ width: 212px; flex: none; margin-left: auto; }
+
+.four { display: grid; justify-items: center; width: 88px; margin-bottom: 9px; }
+.four img { width: 30px; height: 30px; image-rendering: pixelated; }
+.four span { font-family: ms; font-size: 11px; color: #000; background: #FFFF00;
+             padding: 2px 2px 0; margin-top: 3px; white-space: nowrap; }
+
+main { background: rgba(240,248,255,.34); border: 4px ridge rgba(255,255,255,.25);
+       border-radius: 40px; box-shadow: 0 0 10px rgba(0,0,0,.2); padding: 18px 16px 34px; }
+h2.script { font-family: wobble; font-size: 20px; color: #FFFBF1; text-align: center;
+            margin-bottom: 10px; font-weight: normal;
+            text-shadow: -1px -1px 0 #5E5643, 1px -1px 0 #5E5643, -1px 1px 0 #5E5643, 1px 1px 0 #5E5643; }
+.king { background: rgba(30,64,68,.66); border: 1px dashed rgba(253,252,237,.75);
+        border-radius: 6px; padding: 9px 10px; color: rgba(253,252,237,.96);
+        font-family: dep, monospace; font-size: 11.5px; line-height: 1.75; }
+.place { font-family: dep, monospace; font-size: 11px; color: #FFFBF1; text-align: center; margin-top: 8px;
+         text-shadow: -1px -1px 0 #4a4436, 1px -1px 0 #4a4436, -1px 1px 0 #4a4436, 1px 1px 0 #4a4436; }
+.place .emo { font-family: "Segoe UI Emoji"; }
+
+.note { background: #FFFBEA; border: 1px solid #b9b09a; box-shadow: 2px 2px 0 rgba(0,0,0,.25);
+        padding: 6px 9px 8px; position: relative; }
+.note h3 { font-family: lady; font-size: 16px; font-weight: normal; color: #3c002e;
+           border-bottom: 1px dotted #b9b09a; margin-bottom: 4px; padding-bottom: 2px; }
+.note p { font-family: dep, monospace; font-size: 10px; line-height: 1.6; color: #4a3f3f; }
+.note .pin { position: absolute; top: -9px; right: 6px; width: 17px; image-rendering: pixelated; }
+
+.winband { position: absolute; left: 206px; top: 424px; width: 426px; z-index: 30; }
+.win { background: #C0C0C0; border: 2px outset #DFDFDF; box-shadow: 3px 3px 0 rgba(0,0,0,.45); padding: 3px; }
+.win .bar { background: linear-gradient(90deg,#000080 0%,#1084d0 100%); color: #fff;
+            font-family: ms2, sans-serif; font-size: 11px; padding: 3px 3px 3px 5px;
+            display: flex; align-items: center; gap: 4px; }
+.win .bar img { width: 13px; height: 13px; image-rendering: pixelated; }
+.win .bar .t { flex: 1; }
+.win .bar .btn { width: 16px; height: 14px; background: #C0C0C0; border: 1px outset #DFDFDF;
+                 font-family: ms2; font-size: 9px; text-align: center; line-height: 12px; }
+.win .menu { font-family: ms; font-size: 11px; background: #C0C0C0; padding: 2px 4px;
+             border-bottom: 1px solid #808080; display: flex; gap: 10px; }
+.win pre { background: #fff; border: 1px inset #DFDFDF; margin: 0; font-family: dep, monospace;
+           font-size: 10.5px; line-height: 1.5; padding: 6px 7px; color: #000; white-space: pre; }
+.win .kw { color: #0000C0; } .win .st { color: #A31515; }
+.win .body { background: #fff; border: 1px inset #DFDFDF; padding: 9px 11px; }
+
+/* ---- section furniture ---- */
+.hero { height: 692px; }
+.sect { padding: 0 14px; }
+.sect h3.hd {
+  font-family: lady; font-size: 27px; font-weight: normal; color: #FFFBF1;
+  text-align: center; padding: 16px 0 8px; letter-spacing: .5px;
+  text-shadow: -1px -1px 0 #3c3a2e, 1px -1px 0 #3c3a2e, -1px 1px 0 #3c3a2e, 1px 1px 0 #3c3a2e;
+}
+.sect h3.hd img { width: 20px; vertical-align: -3px; image-rendering: pixelated; }
+.divider { text-align: center; padding: 6px 0 2px; }
+.divider img { width: 560px; }
+
+/* icon rows: fixed 88px cells so the band slices into linked tiles */
+.iconrow { display: flex; width: 880px; margin-left: -14px; }
+.iconrow.pad9 { padding-left: 44px; padding-right: 44px; }
+.cell { width: 88px; height: 84px; flex: none;
+        display: flex; align-items: center; justify-content: center; }
+.card { width: 76px; height: 76px; background: #FFFBEA; border: 1px solid #b9b09a;
+        box-shadow: 2px 2px 0 rgba(0,0,0,.34);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+.card img { width: 34px; height: 34px; display: block; }
+.card span { font-family: ms, sans-serif; font-size: 11px; color: #000; background: #FFFF00;
+             padding: 2px 3px 0; line-height: 12px; white-space: nowrap; }
+
+/* ---- stats ---- */
+.statwrap { display: flex; gap: 12px; align-items: stretch; }
+.statwrap .win { flex: 1; }
+.bars { font-family: dep, monospace; font-size: 11px; color: #000; }
+.bars .row { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.bars .nm { width: 92px; flex: none; }
+.bars .track { flex: 1; height: 12px; background: #E6E4DA; border: 1px inset #DFDFDF; }
+.bars .fill { height: 100%; display: block; }
+.bars .pc { width: 44px; flex: none; text-align: right; }
+.tiles { display: flex; gap: 8px; margin-top: 9px; }
+.tile2 { flex: 1; text-align: center; border: 1px inset #DFDFDF; background: #F4F2E8; padding: 5px 2px; }
+.tile2 b { display: block; font-family: dep, monospace; font-size: 17px; color: #123; }
+.tile2 span { font-family: ms; font-size: 10px; color: #444; }
+
+.proceedbox {
+  background-image: linear-gradient(rgba(255,251,241,.9), rgba(255,251,241,.9)),
+                    url("../assets/site/img/Pattern_5.gif");
+  border: 1px solid rgba(0,0,0,.35); border-radius: 12px; padding: 12px 16px;
+  font-family: dep, monospace; font-size: 11.5px; line-height: 1.95; color: #1a1a1a;
+}
+.proceedbox .t { font-family: lady; font-size: 22px; display: block; text-align: center;
+                 margin-bottom: 6px; color: #3c002e; }
+.proceedbox img.b { width: 15px; vertical-align: -3px; image-rendering: pixelated; }
+
+.buttons { text-align: center; padding: 14px 0 4px; }
+.buttons img { margin: 3px 2px; vertical-align: middle; }
+.credit { text-align: center; padding: 10px 0 16px; font-family: dep, monospace;
+          font-size: 10.5px; line-height: 1.85; color: rgba(253,252,237,.9); }
+.credit i { color: rgba(255,255,200,.95); }
+.mark { height: 2px; background: #FF00FF; position: relative; z-index: 99; }
+.credit img { width: 12px; vertical-align: -2px; }
+</style>
+
+<img class="fig trees"  src="../assets/parts/trees_left.png" alt="">
+<img class="fig girl"   src="../assets/parts/girl_full.png" alt="">
+<img class="fig statue" src="../assets/parts/statue.png" alt="">
+
+<section class="hero">
+  <header class="up">
+    <div class="crazy">Hi <span class="emo">👋</span>, I'm ayoub elattar</div>
+  </header>
+
+  <div class="mark"></div>
+  <nav class="up" id="nav">
+    <a class="anchor"><svg viewBox="0 0 200 120" width="176" height="86">
+      <path class="top" d="M 22,74 Q 100,74 178,74" id="p0"></path>
+      <text class="path-text"><textPath href="#p0" startOffset="50%" text-anchor="middle">about</textPath></text></svg></a>
+    <a class="anchor"><svg viewBox="0 0 200 120" width="176" height="86">
+      <path class="top" d="M 22,74 Q 100,74 178,74" id="p1"></path>
+      <text class="path-text"><textPath href="#p1" startOffset="50%" text-anchor="middle">stack</textPath></text></svg></a>
+    <a class="anchor"><svg viewBox="0 0 200 120" width="176" height="86">
+      <path class="top" d="M 22,62 Q 100,28 178,62" id="p2"></path>
+      <text class="path-text"><textPath href="#p2" startOffset="50%" text-anchor="middle">projects</textPath></text></svg></a>
+    <a class="anchor"><svg viewBox="0 0 200 120" width="176" height="86">
+      <path class="top" d="M 22,74 Q 100,74 178,74" id="p3"></path>
+      <text class="path-text"><textPath href="#p3" startOffset="50%" text-anchor="middle">elattar.dev</textPath></text></svg></a>
+    <a class="anchor"><svg viewBox="0 0 200 120" width="176" height="86">
+      <path class="top" d="M 22,74 Q 100,74 178,74" id="p4"></path>
+      <text class="path-text"><textPath href="#p4" startOffset="50%" text-anchor="middle">contact</textPath></text></svg></a>
+  </nav>
+  <div class="mark"></div>
+
+  <div class="knight">
+    <div class="col-left up">
+      <div class="four"><img src="../assets/site/img/paint72.ico" alt=""><span>dEsIgN</span></div>
+      <div class="four"><img src="../assets/site/img/editman.ico" alt=""><span>shIp.exe</span></div>
+      <div class="four"><img src="../assets/site/img/js.ico" alt=""><span>agents.js</span></div>
+      <div class="four"><img src="../assets/site/img/cmd.ico" alt=""><span>shell</span></div>
+    </div>
+    <div class="col-mid">
+      <main>
+        <h2 class="script">Forward-Deployed Engineer<br>Full-Stack + UI/UX Design</h2>
+        <div class="king">
+          I embed with a team, learn their domain fast, and build the product end to end,
+          from agentic AI backends to the UX people open every day. Design and frontend are
+          my strongest skills, so teams trust me with the whole product, not just the model
+          behind it.
+        </div>
+        <div class="place"><span class="emo">📍</span> Taipei, Taiwan &nbsp;&#183;&nbsp; <span class="emo">🌐</span> elattar.dev</div>
+      </main>
+    </div>
+    <div class="col-right up">
+      <div class="note">
+        <img class="pin" src="../assets/site/img/heart1.ico" alt="">
+        <h3>status:</h3>
+        <p>embedded with a team,<br>shipping end to end.<br>open to interesting<br>problems &#9825;</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="winband">
+    <div class="win">
+      <div class="bar"><img src="../assets/site/img/js.ico" alt="">
+        <span class="t">ayoub.js &#8212; Notepad</span>
+        <span class="btn">_</span><span class="btn">&#9633;</span><span class="btn">&#10005;</span></div>
+      <div class="menu"><span>File</span><span>Edit</span><span>Search</span><span>Help</span></div>
+<pre><span class="kw">class</span> Ayoub {
+  role      = <span class="st">'Forward-Deployed Engineer'</span>;
+  work      = [<span class="st">'Full-Stack'</span>, <span class="st">'AI / LLM Agents'</span>, <span class="st">'UI/UX'</span>];
+  stack     = [<span class="st">'TypeScript'</span>, <span class="st">'Python'</span>, <span class="st">'React'</span>,
+               <span class="st">'Next.js'</span>, <span class="st">'LangGraph'</span>];
+  ships     = <span class="st">'the whole product, end to end'</span>;
+  languages = [<span class="st">'EN'</span>, <span class="st">'AR'</span>, <span class="st">'&#20013;&#25991;'</span>, <span class="st">'&#26085;&#26412;&#35486;'</span>];
+}</pre>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><img src="../assets/parts/divider.png" alt=""></div>
+
+<section class="sect">
+  <h3 class="hd"><img src="../assets/site/img/paint72.ico" alt=""> Frontend &amp; Design</h3>
+  <div class="mark"></div>
+  <div class="iconrow" id="row-front"></div>
+  <div class="mark"></div>
+</section>
+
+<section class="sect">
+  <h3 class="hd"><img src="../assets/site/img/cmd.ico" alt=""> Backend, AI &amp; Tools</h3>
+  <div class="mark"></div>
+  <div class="iconrow pad9" id="row-back"></div>
+  <div class="mark"></div>
+</section>
+
+<div class="divider"><img src="../assets/parts/divider.png" alt=""></div>
+
+<section class="sect">
+  <h3 class="hd"><img src="../assets/site/img/newy.gif" alt=""> Stats</h3>
+  <div class="statwrap">
+    <div class="win">
+      <div class="bar"><img src="../assets/site/img/cmd.ico" alt="">
+        <span class="t">languages.exe</span>
+        <span class="btn">_</span><span class="btn">&#9633;</span><span class="btn">&#10005;</span></div>
+      <div class="body">
+        <div class="bars">
+          <div class="row"><span class="nm">TypeScript</span><span class="track"><span class="fill" style="width:67.8%;background:#3178C6"></span></span><span class="pc">67.8%</span></div>
+          <div class="row"><span class="nm">Python</span><span class="track"><span class="fill" style="width:12.0%;background:#3572A5"></span></span><span class="pc">12.0%</span></div>
+          <div class="row"><span class="nm">CSS</span><span class="track"><span class="fill" style="width:7.2%;background:#663399"></span></span><span class="pc">7.2%</span></div>
+          <div class="row"><span class="nm">JavaScript</span><span class="track"><span class="fill" style="width:6.9%;background:#F1E05A"></span></span><span class="pc">6.9%</span></div>
+          <div class="row"><span class="nm">Notebook / HTML</span><span class="track"><span class="fill" style="width:3.3%;background:#DA5B0B"></span></span><span class="pc">3.3%</span></div>
+          <div class="row"><span class="nm">Vue / C#</span><span class="track"><span class="fill" style="width:1.8%;background:#41B883"></span></span><span class="pc">1.8%</span></div>
+        </div>
+        <div class="tiles">
+          <div class="tile2"><b>37</b><span>repos</span></div>
+          <div class="tile2"><b>65</b><span>stars</span></div>
+          <div class="tile2"><b>13</b><span>followers</span></div>
+          <div class="tile2"><b>2021</b><span>since</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect">
+  <div class="proceedbox">
+    <span class="t">&#9734; before you proceed &#9734;</span>
+    <img class="b" src="../assets/site/img/js.ico" alt=""> This page was built out of nostalgia for the simpler,
+    more personal era of the internet &mdash; the &quot;old web&quot; &mdash; rather than the corporate
+    hellscape of the modern profile page.<br>
+    <img class="b" src="../assets/site/img/paint72.ico" alt=""> Coded by hand, best viewed at 1920&times;1080.<br>
+    <img class="b" src="../assets/site/img/heart1.ico" alt=""> Made with caffeine and stubbornness in Taipei. &#9825;
+  </div>
+</section>
+
+<section class="sect">
+  <div class="buttons" id="btns">
+    <img src="../assets/site/img/linkback.png" alt="">
+    <img src="../assets/site/img/buttonnow.gif" alt="">
+    <img src="../assets/site/img/butt.gif" alt="">
+    <img src="../assets/site/img/butt2.gif" alt="">
+    <img src="../assets/site/img/butt3.gif" alt="">
+    <br>
+    <img src="../assets/site/img/caffeine.png" alt="">
+    <img src="../assets/site/img/jam.png" alt="">
+    <img src="../assets/site/img/hopelessromantic.gif" alt="">
+    <img src="../assets/site/img/angelclique.png" alt="">
+    <img src="../assets/site/img/frodolives.gif" alt="">
+    <br>
+    <img src="../assets/site/img/badge-prs.svg" alt="PRs welcome" height="20">
+    <img src="../assets/site/img/badge-os.svg" alt="Open Source Love" height="20">
+  </div>
+</section>
+
+<div class="mark"></div>
+<section class="sect">
+  <div class="credit" id="credit">
+    <img src="../assets/site/img/star.gif" alt=""> layout, fonts and trimmings lovingly borrowed from
+    howsoonisnow.org <img src="../assets/site/img/star.gif" alt=""><br>
+    backdrop: <i>The Swing</i>, Jean-Honor&eacute; Fragonard, 1767 &mdash; public domain
+  </div>
+</section>
+<div class="mark"></div>
+
+<script>
+const FRONT = [["javascript","javascript"],["typescript","typescript"],["react","react"],["nextjs","next.js"],
+  ["vuejs","vue"],["nuxtjs","nuxt"],["flutter","flutter"],["sass","sass"],["tailwind","tailwind"],["figma","figma"]];
+const BACK = [["python","python"],["nodejs","node.js"],["postgresql","postgres"],["graphql","graphql"],
+  ["docker","docker"],["firebase","firebase"],["cypress","cypress"],["git","git"],["linux","linux"]];
+const cell = ([f,l]) => `<div class="cell"><div class="card"><img src="../assets/stack/${f}.svg" alt=""><span>${l}</span></div></div>`;
+document.getElementById('row-front').innerHTML = FRONT.map(cell).join('');
+document.getElementById('row-back').innerHTML  = BACK.map(cell).join('');
+const m = location.hash.match(/a=(-?[\d.]+)/);
+if (m) { const g = document.querySelector('.girl');
+         g.style.animation = 'none';
+         g.style.transform = 'rotate(' + m[1] + 'deg)'; }
+</script>

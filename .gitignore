@@ -1,0 +1,11 @@
+# Mirrored third-party asset library from howsoonisnow.org (fonts, CSS, GIFs).
+# Only needed to re-render the page; nothing in README.md references it.
+# See BUILD.md for the command that re-mirrors it.
+assets/site/
+
+# Render intermediates
+build/frames/
+build/*.png
+build/md.json
+build/body.html
+build/preview.html
