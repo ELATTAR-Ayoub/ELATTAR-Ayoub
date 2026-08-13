@@ -87,9 +87,7 @@ Coded by hand, best viewed at 1920×1080. Made with caffeine and stubbornness in
 
 <div align="center">
 
-<a href="https://elattar.dev"><img src="assets/img/linkback.png" alt="elattar.dev"></a> <img src="assets/img/buttonnow.gif" alt=""> <img src="assets/img/butt.gif" alt=""> <img src="assets/img/butt2.gif" alt=""> <img src="assets/img/butt3.gif" alt="">
-<br>
-<img src="assets/img/caffeine.png" alt=""> <img src="assets/img/jam.png" alt=""> <img src="assets/img/hopelessromantic.gif" alt=""> <img src="assets/img/angelclique.png" alt=""> <img src="assets/img/frodolives.gif" alt="">
+<img src="assets/img/angelclique.png" alt="">
 
 <br>
 
