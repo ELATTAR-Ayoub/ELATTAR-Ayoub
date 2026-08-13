@@ -12,6 +12,9 @@
 
 <!-- scenery: every figure is its own asset, layered by CSS -->
 <div class="scenery" aria-hidden="true">
+  <div class="sky"></div>
+  <div class="texture"></div>
+  <div class="vignette"></div>
   <div class="par" data-speed="0.05"><img class="trees"  src="assets/img/trees.png"  alt=""></div>
   <div class="par" data-speed="0.09"><img class="statue" src="assets/img/statue.png" alt=""></div>
   <div class="par" data-speed="0.15"><img class="girl"   src="assets/img/girl.png"   alt=""></div>
@@ -19,7 +22,7 @@
 
 <!-- the canopy the original site floats over everything -->
 <div class="foreground" aria-hidden="true">
-  <div class="par" data-speed="0.24"><img class="canopy" src="assets/img/canopy.png" alt=""></div>
+  <div class="par" data-speed="0.08" data-max="60"><img class="canopy" src="assets/img/canopy.png" alt=""></div>
 </div>
 
 <div class="page">
@@ -206,12 +209,18 @@
 // swing and zoom transforms on the <img> children stay untouched.
 (() => {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const MAX_TRAVEL = 260;
   const rails = [...document.querySelectorAll('.par')];
   if (!rails.length) return;
   let queued = false;
   const paint = () => {
     const y = window.scrollY || window.pageYOffset;
-    for (const r of rails) r.style.transform = 'translate3d(0,' + (-y * r.dataset.speed).toFixed(2) + 'px,0)';
+    for (const r of rails) {
+      // clamped per layer to the slack that layer actually has
+      const cap = +(r.dataset.max || MAX_TRAVEL);
+      const d = Math.max(-cap, -y * r.dataset.speed);
+      r.style.transform = 'translate3d(0,' + d.toFixed(2) + 'px,0)';
+    }
     queued = false;
   };
   addEventListener('scroll', () => {
