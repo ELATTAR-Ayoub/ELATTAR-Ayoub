@@ -55,7 +55,7 @@ body {
 }
 
 .statue {
-  left: 1vw; bottom: -8vh; width: min(15vw, 210px);
+  left: -1vw; bottom: -9vh; width: min(16vw, 220px);
   filter: drop-shadow(0 0 20px rgba(6,18,22,.9))
           drop-shadow(4px 3px 8px rgba(6,18,22,.75))
           contrast(1.14) saturate(1.06);
