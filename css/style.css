@@ -20,6 +20,8 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body { max-width: 100%; overflow-x: hidden; }
+
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -119,7 +121,7 @@ body {
 
 /* ---------- page shell ---------- */
 
-.page { position: relative; z-index: 10; width: min(980px, 92vw); margin: 0 auto; padding: 0 0 4rem; }
+.page { position: relative; z-index: 10; width: min(980px, calc(100% - 2rem)); margin: 0 auto; padding: 0 0 4rem; }
 
 header { text-align: center; padding: 2.2rem 0 0; }
 
@@ -143,11 +145,6 @@ nav a:hover .rule { stroke-width: 6px; }
 /* ---------- three-column body ---------- */
 
 .cols { display: grid; grid-template-columns: 92px minmax(0, 1fr) 212px; gap: 14px; align-items: start; }
-
-@media (max-width: 780px) {
-  .cols { grid-template-columns: 1fr; }
-  .shortcuts { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-}
 
 /* desktop shortcuts */
 .shortcut { display: grid; justify-items: center; width: 88px; margin-bottom: 10px; text-decoration: none; }
@@ -330,3 +327,61 @@ footer img { width: 12px; vertical-align: -2px; }
   border: 2px outset #dfdfdf;
 }
 ::-webkit-scrollbar-corner { background: #c0c0c0; }
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 780px) {
+  .page { width: calc(100% - 1.6rem); padding-bottom: 2.5rem; }
+  header { padding: 1.4rem 0 0; }
+  h1 { font-size: clamp(1.5rem, 8.4vw, 3rem); letter-spacing: 0; }
+
+  /* the nav arcs are SVG with a viewBox, so they scale cleanly by percentage */
+  nav { margin-top: .2rem; }
+  nav a { width: 33.333%; height: auto; }
+  nav a svg { display: block; width: 100%; height: auto; }
+
+  .cols { grid-template-columns: 1fr; gap: 10px; }
+  .shortcuts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .shortcut { margin-bottom: 0; }
+
+  .panel { border-radius: 24px; padding: 1rem .8rem 1.4rem; }
+  h2 { font-size: 1.1rem; }
+  .bio { font-size: .74rem; line-height: 1.7; }
+  .where { font-size: .68rem; }
+  .note { max-width: 320px; margin: 0 auto; }
+
+  .win pre { font-size: .56rem; padding: .45rem .5rem; }
+  .win .bar, .win .menu { font-size: 10px; }
+
+  h3.hd { font-size: 1.25rem; }
+  .divider { width: 92%; }
+
+  .tile { width: 66px; height: 66px; }
+  .tile img { width: 27px; height: 27px; }
+  .tile span { font-size: 10px; padding: 1px 2px 0; }
+
+  .bars { font-size: .6rem; }
+  .bars .nm { width: 74px; }
+  .bars .pc { width: 34px; }
+  .figures b { font-size: .9rem; }
+  .madeby { font-size: 1.2rem; }
+
+  /* scenery stays atmospheric rather than swallowing a small screen */
+  .trees  { width: 74vw; left: -10vw; }
+  .statue { width: 32vw; left: -4vw; }
+  .girl   { width: 48vw; top: 7vh; right: -10vw; }
+  .canopy { opacity: .32; }
+}
+
+@media (max-width: 430px) {
+  nav a { width: 50%; }
+  .tile { width: 60px; height: 60px; }
+  .tile img { width: 24px; height: 24px; }
+  .win pre { font-size: .5rem; }
+  .bars .nm { width: 64px; }
+}
+
+/* coarse pointers get no hover-dependent affordances */
+@media (hover: none) {
+  .tile:hover { transform: none; box-shadow: 2px 2px 0 rgba(0, 0, 0, .34); }
+}
