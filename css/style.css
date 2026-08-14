@@ -341,7 +341,10 @@ footer img { width: 12px; vertical-align: -2px; }
   nav a svg { display: block; width: 100%; height: auto; }
 
   .cols { grid-template-columns: 1fr; gap: 10px; }
-  .shortcuts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  /* grid items default to min-width:auto and refuse to shrink below their
+     content, so the shortcut row and the panel burst out of the column */
+  .cols > * { min-width: 0; width: 100%; }
+  .shortcuts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; width: 100%; }
   .shortcut { margin-bottom: 0; }
 
   .panel { border-radius: 24px; padding: 1rem .8rem 1.4rem; }
