@@ -1,15 +1,9 @@
 name: Refresh stats
 
+# Automatic runs are disabled. Start this manually from the Actions tab only
+# when the README statistics need to be refreshed.
 on:
-  schedule:
-    # 04:12 UTC daily — off the hour to avoid the cron stampede
-    - cron: "12 4 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - scripts/stats.py
-      - .github/workflows/stats.yml
 
 permissions:
   contents: write

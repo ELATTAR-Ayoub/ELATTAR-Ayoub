@@ -74,7 +74,7 @@ class Ayoub {
 
 **35** repos &nbsp;·&nbsp; **65** stars &nbsp;·&nbsp; **13** followers &nbsp;·&nbsp; on GitHub since **2021**
 
-<sub>refreshed automatically · 2026-08-17</sub>
+<sub>stats snapshot · 2026-08-17</sub>
 <!-- STATS:END -->
 
 <img src="https://streak-stats.demolab.com/?user=elattar-ayoub&theme=nightowl" alt="streak stats" />
